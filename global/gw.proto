@@ -1,0 +1,16 @@
+syntax = "proto3";
+package github.zhanmengao.gateway.global;
+option  go_package = "github.com/zhanmengao/gateway/global";
+
+enum NETWORK_TYPE {
+  NETWORK_INIT = 0;
+  NETWORK_WS = 1;
+  NETWORK_HTTP = 2;
+  NETWORK_UDP = 3;
+}
+
+message DBUrl {
+  string               Service = 1;  //服务名
+  string               URI = 2;  //URI前缀
+  NETWORK_TYPE Type = 3;  //网络类型
+}
